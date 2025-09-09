@@ -68,14 +68,15 @@ async function handleGeofenceEntry(event, user) {
 
 async function getPromotionForStore(externalId, userId) {
   // Demo promotion logic - in real app, query your database
+
   const storePromotions = {
-    store_001: {
+    den: {
       id: "welcome_10",
       title: "Welcome! 10% Off",
       description: "Get 10% off your entire purchase",
       eligible: true,
     },
-    store_002: {
+    default_promo: {
       id: "mall_special",
       title: "Mall Special - 15% Off",
       description: "Exclusive mall location discount",
@@ -83,7 +84,12 @@ async function getPromotionForStore(externalId, userId) {
     },
   };
 
-  return storePromotions[externalId] || { eligible: false };
+  if (userID === "simulated-user-id" && externalId === "199609") {
+    console.log(storePromotions[den]);
+    return storePromotions[den];
+  } else {
+    return storePromotions[default_promo];
+  }
 }
 
 async function logPromotionEvent(eventData) {
