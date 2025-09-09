@@ -85,10 +85,10 @@ async function getPromotionForStore(externalId, userId) {
   };
 
   if (userId === "simulated-user-id" && externalId === "199609") {
-    console.log(storePromotions[den]);
-    return storePromotions[den];
+    console.log(storePromotions["den"]);
+    return storePromotions["den"];
   } else {
-    return storePromotions[default_promo];
+    return storePromotions["default_promo"];
   }
 }
 
