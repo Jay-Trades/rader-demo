@@ -73,18 +73,18 @@ async function getPromotionForStore(externalId, userId) {
     den: {
       id: "welcome_10",
       title: "Welcome! 10% Off",
-      description: "Get 10% off your entire purchase",
+      description: "Get 10% off your table purcahase at Den Social",
       eligible: true,
     },
     default_promo: {
-      id: "mall_special",
-      title: "Mall Special - 15% Off",
-      description: "Exclusive mall location discount",
+      id: "all store specials",
+      title: "All store 15% Off",
+      description: "location discount",
       eligible: true,
     },
   };
 
-  if (userID === "simulated-user-id" && externalId === "199609") {
+  if (userId === "simulated-user-id" && externalId === "199609") {
     console.log(storePromotions[den]);
     return storePromotions[den];
   } else {
